@@ -1,0 +1,201 @@
+/* ====================================================================
+   ESTILOS PREMIUM — DIM+ LANDING PAGE DE ALTA CONVERSÃO
+   ==================================================================== */
+
+:root {
+  --bg-dark: #050806;
+  --bg-card: rgba(10, 18, 14, 0.7);
+  --bg-card-hover: rgba(14, 26, 20, 0.85);
+  --border-subtle: rgba(16, 185, 129, 0.15);
+  --border-highlight: rgba(0, 230, 118, 0.4);
+  --neon-green: #00E676;
+  --emerald-400: #34D399;
+  --emerald-500: #10B981;
+  --emerald-600: #059669;
+  --emerald-900: #064E3B;
+  --text-muted: #94A3B8;
+  --text-dim: #64748B;
+}
+
+/* Base styling */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-dark);
+  color: #F8FAFC;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-dark);
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 230, 118, 0.12), transparent),
+    radial-gradient(circle at 10% 40%, rgba(5, 150, 105, 0.08), transparent 45%),
+    radial-gradient(circle at 90% 70%, rgba(0, 230, 118, 0.06), transparent 40%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Ambient subtle background grid */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050806;
+}
+::-webkit-scrollbar-thumb {
+  background: #064E3B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #10B981;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-highlight);
+  box-shadow: 0 12px 32px -8px rgba(0, 230, 118, 0.12);
+  transform: translateY(-3px);
+}
+
+/* Neon Glow utilities */
+.neon-glow-btn {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #00FF66 0%, #00E676 50%, #059669 100%);
+  box-shadow: 0 0 25px -4px rgba(0, 230, 118, 0.45), 0 8px 20px -6px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neon-glow-btn:hover {
+  box-shadow: 0 0 35px 2px rgba(0, 230, 118, 0.65), 0 12px 28px -6px rgba(0, 0, 0, 0.8);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.neon-glow-btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Shimmer Light effect on buttons */
+.shimmer-effect::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0) 10%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 90%
+  );
+  transform: rotate(25deg);
+  animation: buttonShimmer 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes buttonShimmer {
+  0% { left: -70%; }
+  25% { left: 140%; }
+  100% { left: 140%; }
+}
+
+/* Pulsing background auras */
+.pulse-glow {
+  animation: pulseGlowAnim 5s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlowAnim {
+  0% {
+    opacity: 0.35;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 0.65;
+    transform: scale(1.05);
+  }
+}
+
+/* Float subtle animation for mockup */
+.float-subtle {
+  animation: floatAnim 6s ease-in-out infinite;
+}
+
+@keyframes floatAnim {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Phone Mockup Frame */
+.phone-mockup-outer {
+  position: relative;
+  border-radius: 44px;
+  padding: 10px;
+  background: linear-gradient(145deg, #1f2d24 0%, #0d1611 50%, #08100a 100%);
+  box-shadow: 
+    0 25px 60px -15px rgba(0, 0, 0, 0.9),
+    0 0 40px -5px rgba(0, 230, 118, 0.18),
+    inset 0 1px 2px rgba(255, 255, 255, 0.2),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 230, 118, 0.25);
+}
+
+.phone-mockup-inner {
+  border-radius: 36px;
+  overflow: hidden;
+  background: #020604;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Dynamic island */
+.mockup-dynamic-island {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 24px;
+  background: #000000;
+  border-radius: 12px;
+  z-index: 30;
+  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Tab active state */
+.tab-btn.active {
+  background: rgba(0, 230, 118, 0.12);
+  border-color: rgba(0, 230, 118, 0.5);
+  color: #00E676;
+}
+
+.tab-btn {
+  transition: all 0.2s ease;
+}
+
+/* Badge styling */
+.premium-pill {
+  background: rgba(0, 230, 118, 0.08);
+  border: 1px solid rgba(0, 230, 118, 0.25);
+  box-shadow: 0 0 15px rgba(0, 230, 118, 0.1);
+}
