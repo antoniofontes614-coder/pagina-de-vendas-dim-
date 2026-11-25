@@ -11,7 +11,7 @@
  * const CAKTO_CHECKOUT_URL = "https://pay.cakto.com.br/abc123xyz";
  */
 
-const CAKTO_CHECKOUT_URL = "https://cakto.com.br/"; // Substitua pela sua URL da Cakto quando desejar
+const CAKTO_CHECKOUT_URL = "https://pay.cakto.com.br/pfzm5xf_1371135";
 
 // Exporta para ser acessível pelo script principal
 window.CAKTO_CHECKOUT_URL = CAKTO_CHECKOUT_URL;

@@ -7,18 +7,23 @@
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Configuração do redirecionamento para o Checkout da Cakto
   const checkoutButtons = document.querySelectorAll('.btn-cta, [data-checkout-button]');
+  const targetUrl = window.CAKTO_CHECKOUT_URL || "https://pay.cakto.com.br/pfzm5xf_1371135";
   
   checkoutButtons.forEach(btn => {
+    if (btn.tagName === 'A') {
+      btn.href = targetUrl;
+    }
+
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       
-      const targetUrl = window.CAKTO_CHECKOUT_URL || "https://cakto.com.br/";
+      const url = window.CAKTO_CHECKOUT_URL || btn.getAttribute('href') || targetUrl;
       
       // Feedback visual ao clicar
       btn.style.transform = "scale(0.96)";
       setTimeout(() => {
         btn.style.transform = "";
-        window.location.href = targetUrl;
+        window.location.href = url;
       }, 120);
     });
   });
