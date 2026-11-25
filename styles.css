@@ -24,6 +24,7 @@ html {
   background-color: var(--bg-dark);
   color: #F8FAFC;
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -34,6 +35,7 @@ body {
     radial-gradient(circle at 90% 70%, rgba(0, 230, 118, 0.06), transparent 40%);
   background-attachment: fixed;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Ambient subtle background grid */
@@ -198,4 +200,43 @@ body {
   background: rgba(0, 230, 118, 0.08);
   border: 1px solid rgba(0, 230, 118, 0.25);
   box-shadow: 0 0 15px rgba(0, 230, 118, 0.1);
+}
+
+/* Utilitários e Responsividade Mobile Fina */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (max-width: 640px) {
+  .float-subtle {
+    animation: floatAnimMobile 5s ease-in-out infinite;
+  }
+  
+  @keyframes floatAnimMobile {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  .phone-mockup-outer {
+    border-radius: 36px;
+    padding: 7px;
+  }
+
+  .phone-mockup-inner {
+    border-radius: 28px;
+  }
+
+  .mockup-dynamic-island {
+    top: 14px;
+    width: 76px;
+    height: 18px;
+  }
 }
